@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript tutorial</title>
+</head>
+
+<body>
+    <h1>Tutorial</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        // value.map()
+        let num1 = [12, 2, 3, 4, 5, 6, 7];
+        let num2 = num1.map(multiply);
+        function multiply(value) {
+            return value * 2;
+        }
+        // document.getElementById("demo").innerHTML=num2;
+
+    </script>
+    <script>
+        // creating an objects
+        // this is fast type...
+        var student = {
+            name: "rahul",
+            age: 21,
+            studies: "computer Science",
+        }
+        student.age
+        // document.getElementById("demo").innerHTML = student.name + " the age " + student.age + " studies in " + student.studies;
+    </script>
+<script>
+    // this a srcond method to creat an objects
+    var student= new Object();
+    student.name="Rahul",
+    student.age=21,
+    student.studies="Computer science"
+    // document.getElementById("demo").innerHTML = student.name + " the age " + student.age + " studies in " + student.studies;
+
+</script>
+<script>
+    function stud(name,age,studies) {
+        this.name=name;
+        this.age=age;
+        this.studies=studies;
+        
+    }
+    var student=stud("rahul",21,"Computer Science");
+    // document.getElementById("demo").innerHTML = student.name + " the age " + student.age + " studies in " + student.studies;
+
+</script>
+<script>
+    function showtime() {
+  let date = new Date();
+  let h = date.getHours();
+  let m = date.getMinutes();
+  let s = date.getSeconds();
+
+  let time = h + ":" + m + ":" + s;
+  document.getElementById("demo").innerHTML = time;
+  document.getElementById("demo1").innerHTML = date;
+  setTimeout(showtime, 1000);
+
+
+}
+showtime();
+</script>
+</body>
+
+</html>

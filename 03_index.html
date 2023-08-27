@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick button</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #dami {
+            font-size: 50px;
+            text-decoration: none;
+            color: blue;
+        }
+
+        button {
+            border: 2px solid pink;
+            font-size: 15px;
+            margin: 2vw 6vw;
+            border-radius: 25px;
+            height: 3rem;
+            width: 7rem;
+            padding: 7px;
+            cursor: pointer;
+            transition: width 3s;
+            font-size: large;
+            color: brown;
+        }
+
+        button:hover {
+            width: 9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="myFunction()"> BTN</button>
+    <a href="" id="dami">
+        <div id="doc">
+            Tanmay Mandal
+        </div>
+    </a>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("dami");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            }
+            else {
+                x.style.display = "none";
+            }
+        }
+
+        let name ="mukul";
+        // window.alart("Hallo, ${name}");
+        // alert("Hallo Madhumita")
+        window.alert("Hallo World")
+    </script>
+</body>
+
+</html>

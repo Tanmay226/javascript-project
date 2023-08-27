@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Bar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+            color: lightgray;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            flex-direction: column;
+            height: 150px;
+        }
+
+        .counter {
+            font-size: 40px;
+        }
+
+        .loading-bar-back {
+            width: 100%;
+            height: 8px;
+            position: absolute;
+            border: none;
+            border-radius: 5px;
+            background-color: lightgray;
+            bottom: 10px;
+        }
+
+        .loading-bar-front {
+            width: 10%;
+            height: 8px;
+            left: 0;
+            position: absolute;
+            border: none;
+            bottom: 10px;
+            border-radius: 5px;
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Loading...</h1>
+        <div class="counter">0%</div>
+        <hr class="loading-bar-back">
+
+        <hr class="loading-bar-front">
+
+    </div>
+    <script>
+        const counterEl = document.querySelector(".counter");
+        const barEl = document.querySelector(".loading-bar-front");
+
+        let idx = 0;
+        updateNum();
+
+        function updateNum() {
+            counterEl.innerText = idx + "%";
+            barEl.style.width = idx + "%";
+            idx++;
+            if (idx <= 100) {
+                setTimeout(updateNum, 200)
+            }
+            console.log(idx);
+        }
+
+        // for loop method another alternative
+        // for (let i = 0; i <= 500; i++) {
+        //     console.log(i);// 1 2 3..10
+
+        //     counterEl.innerText = i + "%";
+        //     barEl.style.width = i + "%";
+
+        // }
+
+    </script>
+</body>
+
+</html>

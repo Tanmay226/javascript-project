@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 javascript</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #cars{
+        width: 100%;
+        height: 25px;
+
+      }
+    </style>
+</head>
+
+<body>
+    <h1>javascript Tutorial</h1>
+    <details>
+      <summary> Details tages</summary>
+      <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis at cumque optio!</P>
+    </details>
+    <p id="demo"></p>
+    <select name="car" id="cars">cars
+      <option value="a">omni</option>
+      <option value="b">omni1</option>
+      <option value="c">omni2</option>
+      <option value="d">omni3</option>
+      <option value="e">omni4</option>
+    </select>
+
+  <script>
+    let i = 10;
+    // do {
+    //     alert(i);
+    //     if(i==5 || i==6);
+    //     i--;
+       
+    // } while (i>=0);
+    document.getElementById("demo").innerHTML=i;
+
+    const a=+ prompt("enter first: ");
+    const o=prompt("enter operator: ");
+    const b =+prompt("enter second: ")
+
+    switch (o) {
+      case "+":
+        alert(a+b);
+        break;
+      case "-":
+        alert(a-b);
+        break;
+      case "*":
+        alert(a*b);
+        break;
+      case "/":
+        alert(a/b);
+        break;
+    
+      default:
+        alert("bad expression")
+        break;
+    }
+  </script>
+
+</body>
+
+</html>

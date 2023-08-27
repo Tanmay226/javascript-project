@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String method</title>
+</head>
+<body>
+    <script>
+    // input name 
+    var name = prompt("What is your name?");
+
+    // Capitalised fast letter of char
+// a Isolate the fast char
+   var fastChar = name.slice(0,1);
+    // b turn the fast letter
+var upperCaseFastChar = fastChar.toUpperCase();
+// c Isolate rest of name
+var restOfName = name.slice(1,name.length);
+// convert lower case
+restOfName= restOfName.toLowerCase();
+    // d concatenate fast char with rest of the char 
+var capitalisedName = upperCaseFastChar + restOfName;
+    // we use the capitalised version of their name to greet them using an alert
+          alert("Hello " + capitalisedName + "!");
+          console.log(capitalisedName);
+</script>
+</body>
+</html>

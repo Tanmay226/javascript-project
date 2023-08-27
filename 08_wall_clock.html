@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wall Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        img {
+            width: 70px;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            z-index: 2;
+            transform: translateX(-50%);
+        }
+
+        .clock {
+            background-color: lightgray;
+            height: 350px;
+            width: 350px;
+            position: relative;
+            border-radius: 50%;
+            border: 5px solid darkgrey;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .number div {
+
+            position: absolute;
+            font-weight: bold;
+            font-size: 27px;
+            color: lightgoldenrodyellow;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .twelve {
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .six {
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .three {
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .nine {
+            left: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .arrow {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .arrow::before {
+            content: "";
+            width: 25px;
+            height: 25px;
+            background-color: darkgreen;
+            border-radius: 50%;
+            z-index: 4;
+        }
+
+        .arrow div {
+            background-color: white;
+            width: 7px;
+            position: absolute;
+            transform-origin: bottom center;
+            bottom: 50%;
+            height: 120px;
+            z-index: 3;
+            border-radius: 50% 50% 0 0;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7)
+        }
+
+        .arrow .hour {
+            height: 80px;
+            transform: rotate(60deg);
+        }
+
+        .arrow .second {
+            background-color: goldenrod;
+            transform: rotate(250deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="number">
+            <div class="twelve">12</div>
+            <div class="nine">9</div>
+            <div class="six">6</div>
+            <div class="three">3</div>
+        </div>
+        <div class="arrow">
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Rolex_logo.svg/1200px-Rolex_logo.svg.png"
+            alt="Rolex logo ">
+    </div>
+    <script>
+        console.log('time is your');
+        const hourEl = document.querySelector('.hour');
+        const minuteEl = document.querySelector('.minute');
+        const secondEl = document.querySelector('.second');
+        // console.log(hourEl)
+        // console.log(minuteEl)
+
+        function updateClock() {
+            const date = new Date();
+            setTimeout(updateClock, 1000);
+            // console.log(currentTime)
+            const hour = date.getHours();
+            const minute = date.getMinutes();
+            const second = date.getSeconds();
+            // console.log(hour, minute, second);
+
+            const hourdeg = (hour / 12) * 360;
+            const minutedeg = (minute / 60) * 360;
+            const seconddeg = (second / 60) * 360;
+
+            // console.log(hourdeg);
+            hourEl.style.transform = `rotate(${hourdeg}deg)`;
+            minuteEl.style.transform = `rotate(${minutedeg}deg)`;
+            secondEl.style.transform = `rotate(${seconddeg}deg)`;      
+        }
+        updateClock();
+    </script>
+
+</body>
+
+</html>
